@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "example",
+    "id": "animal_armor_trims",
     "version": "${version}",
     "name": "${mod_name}",
     "description": "${description}",
@@ -16,7 +16,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.cursee.example.ExampleMod"
+          "com.cursee.animal_armor_trims.AnimalArmorTrimsFabric"
         ]
     },
     "mixins": [
