@@ -7,7 +7,7 @@
     "mixins": [
     ],
     "client": [
-        "FabricHorseArmorLayerMixin"
+        "FabricHALMixin"
     ],
     "server": [
     ],

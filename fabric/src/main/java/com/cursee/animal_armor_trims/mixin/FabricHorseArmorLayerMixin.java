@@ -2,25 +2,17 @@ package com.cursee.animal_armor_trims.mixin;
 
 import com.cursee.animal_armor_trims.AnimalArmorTrimsFabric;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.serialization.DataResult;
 import net.minecraft.client.model.HorseModel;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.layers.HorseArmorLayer;
-import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.texture.atlas.SpriteSources;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.armortrim.ArmorTrim;
@@ -114,7 +106,7 @@ public class FabricHorseArmorLayerMixin {
 		
 		// ((HorseArmorLayer)(Object) this).getParentModel().renderToBuffer(poseStack, multiBufferSource.getBuffer(RenderType.armorCutoutNoCull(armorTrim.innerTexture(ArmorMaterials.IRON))), f, g, h, j, k,l);
 		
-		((HorseArmorLayer)(Object) this).getParentModel().renderToBuffer(poseStack, multiBufferSource.getBuffer(RenderType.armorCutoutNoCull(AnimalArmorTrimsFabric.TEST)), f, g, h, j, k,l);
+		((HorseArmorLayer)(Object) this).getParentModel().renderToBuffer(poseStack, multiBufferSource.getBuffer(RenderType.armorCutoutNoCull(AnimalArmorTrimsFabric.COAST_AMETHYST)), f, g, h, j, k,l);
 	}
 	
 	// @Unique
