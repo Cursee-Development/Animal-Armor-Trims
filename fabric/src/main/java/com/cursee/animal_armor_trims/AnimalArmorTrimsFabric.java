@@ -7,9 +7,9 @@ public class AnimalArmorTrimsFabric implements ModInitializer {
     
     // public static final ResourceLocation TEST = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models_old/coast.png");
     
-     public static final ResourceLocation TEST = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models/horse_armor_amethyst_new.png");
-    
     // public static final ResourceLocation TEST = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models_old/horse_test.png");
+    
+    public static final ResourceLocation TEST = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models/dune_trim_test.png");
     
     public static final ResourceLocation BLANK = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models_old/blank.png");
     

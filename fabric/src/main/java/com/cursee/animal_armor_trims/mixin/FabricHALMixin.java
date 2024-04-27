@@ -557,7 +557,7 @@ public class FabricHALMixin extends RenderLayer<Horse, HorseModel<Horse>> {
 					
 					
 					// this.model.renderToBuffer(p_117032_, $$20, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
-					this.model.renderToBuffer(p_117032_, p_117033_.getBuffer(RenderType.entityCutoutNoCull(AnimalArmorTrimsFabric.TEST)), p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
+					this.model.renderToBuffer(p_117032_, p_117033_.getBuffer(RenderType.entityCutoutNoCull(AnimalArmorTrimsFabric.TEST)), p_117034_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 				}
 			}
 			
