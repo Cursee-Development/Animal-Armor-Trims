@@ -1,15 +1,16 @@
 package com.cursee.animal_armor_trims;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
 
-public class AnimalArmorTrimsFabric implements ModInitializer {
+public class AnimalArmorTrimsFabric implements ClientModInitializer {
     
     // public static final ResourceLocation TEST = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models_old/coast.png");
     
     // public static final ResourceLocation TEST = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models_old/horse_test.png");
     
-    public static final ResourceLocation TEST = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models/dune_trim_test.png");
+    // public static final ResourceLocation TEST = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models/dune_trim_test.png");
     
     public static final ResourceLocation BLANK = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models_old/blank.png");
     
@@ -184,7 +185,5 @@ public class AnimalArmorTrimsFabric implements ModInitializer {
     public static final ResourceLocation WILD_REDSTONE = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models_new/wild_redstone.png");
     
     @Override
-    public void onInitialize() {
-        CommonClass.init();
-    }
+    public void onInitializeClient() {}
 }

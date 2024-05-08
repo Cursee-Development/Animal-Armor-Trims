@@ -16,6 +16,9 @@
     "environment": "*",
     "entrypoints": {
         "main": [
+          "com.cursee.animal_armor_trims.AnimalArmorTrimsFabricMain"
+        ],
+        "client": [
           "com.cursee.animal_armor_trims.AnimalArmorTrimsFabric"
         ]
     },

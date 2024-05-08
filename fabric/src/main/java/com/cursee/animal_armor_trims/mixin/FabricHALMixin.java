@@ -21,24 +21,37 @@ import net.minecraft.world.item.DyeableHorseArmorItem;
 import net.minecraft.world.item.HorseArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.armortrim.ArmorTrim;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Objects;
 import java.util.Optional;
 
 @Mixin(HorseArmorLayer.class)
-public class FabricHALMixin extends RenderLayer<Horse, HorseModel<Horse>> {
+public class FabricHALMixin { //} extends RenderLayer<Horse, HorseModel<Horse>> {
 	
-	@Shadow
-	@Final
-	private HorseModel<Horse> model;
-	
+	// @Shadow
+	// @Final
+	// private HorseModel<Horse> model;
+
+	// @Shadow @Final private HorseModel<Horse> model;
+
+	@Unique
+	HorseModel<Horse> model;
+
 	public FabricHALMixin(RenderLayerParent<Horse, HorseModel<Horse>> renderLayerParent) {
-		super(renderLayerParent);
+		//super(renderLayerParent);
+
+		model = renderLayerParent.getModel();
+
+
 	}
 	
 	// @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/animal/horse/Horse;FFFFFF)V", at = @At("TAIL"))
@@ -89,59 +102,76 @@ public class FabricHALMixin extends RenderLayer<Horse, HorseModel<Horse>> {
 	// 	}
 	// }
 	
-	@Unique
-	private static Optional<ArmorTrim> getTrim(RegistryAccess registryAccess, ItemStack itemStack) {
-		if (itemStack.is(ItemTags.TRIMMABLE_ARMOR) && itemStack.getTag() != null && itemStack.getTag().contains("Trim")) {
-			CompoundTag compoundTag = itemStack.getTagElement("Trim");
-			DataResult<ArmorTrim> var10000 = net. minecraft. world. item. armortrim. ArmorTrim.CODEC.parse(RegistryOps.create(NbtOps.INSTANCE, registryAccess), compoundTag);
-			Logger var10001 = net.minecraft.world.item.armortrim.ArmorTrim.LOGGER;
-			Objects.requireNonNull(var10001);
-			ArmorTrim armorTrim = (ArmorTrim)var10000.resultOrPartial(var10001::error)
-//		ArmorTrim armorTrim = (ArmorTrim)var10000.resultOrPartial((s) -> {
-//			var10001.error(s);
-//		})
-				.orElse((ArmorTrim) null);
-			return Optional.ofNullable(armorTrim);
-		} else {
-			return Optional.empty();
-		}
-	}
+//	@Unique
+//	private static Optional<ArmorTrim> getTrim(RegistryAccess registryAccess, ItemStack itemStack) {
+//		if (itemStack.is(ItemTags.TRIMMABLE_ARMOR) && itemStack.getTag() != null && itemStack.getTag().contains("Trim")) {
+//			CompoundTag compoundTag = itemStack.getTagElement("Trim");
+//			DataResult<ArmorTrim> var10000 = net. minecraft. world. item. armortrim. ArmorTrim.CODEC.parse(RegistryOps.create(NbtOps.INSTANCE, registryAccess), compoundTag);
+//			Logger var10001 = net.minecraft.world.item.armortrim.ArmorTrim.LOGGER;
+//			Objects.requireNonNull(var10001);
+//			ArmorTrim armorTrim = (ArmorTrim)var10000.resultOrPartial(var10001::error)
+////		ArmorTrim armorTrim = (ArmorTrim)var10000.resultOrPartial((s) -> {
+////			var10001.error(s);
+////		})
+//				.orElse((ArmorTrim) null);
+//			return Optional.ofNullable(armorTrim);
+//		} else {
+//			return Optional.empty();
+//		}
+//	}
 	
-	@Unique
-	private void renderTrim(HorseArmorItem armorItem, PoseStack poseStack, MultiBufferSource multiBufferSource, Horse horse, ArmorTrim armorTrim, int f, int g, float h, float j, float k, float l) {
-		
-		// ((HorseArmorLayer)(Object) this).getParentModel().renderToBuffer(poseStack, multiBufferSource.getBuffer(RenderType.armorCutoutNoCull(AnimalArmorTrimsFabric.TEST)), f, g, h, j, k,l);
-		
-		VertexConsumer consumer = multiBufferSource.getBuffer(RenderType.armorCutoutNoCull(AnimalArmorTrimsFabric.COAST_AMETHYST));
-		
-		((HorseArmorLayer)(Object) this).getParentModel().renderToBuffer(poseStack, consumer, f, g, h, j, k,l);
-	}
-	
-	@Override
-	public void render(PoseStack p_117032_, MultiBufferSource p_117033_, int p_117034_, Horse p_117035_, float p_117036_, float p_117037_, float p_117038_, float p_117039_, float p_117040_, float p_117041_) {
+	// @Unique
+	// private void renderTrim(HorseArmorItem armorItem, PoseStack poseStack, MultiBufferSource multiBufferSource, Horse horse, ArmorTrim armorTrim, int f, int g, float h, float j, float k, float l) {
+	//
+	// 	// ((HorseArmorLayer)(Object) this).getParentModel().renderToBuffer(poseStack, multiBufferSource.getBuffer(RenderType.armorCutoutNoCull(AnimalArmorTrimsFabric.TEST)), f, g, h, j, k,l);
+	//
+	// 	VertexConsumer consumer = multiBufferSource.getBuffer(RenderType.armorCutoutNoCull(AnimalArmorTrimsFabric.COAST_AMETHYST));
+	//
+	// 	((HorseArmorLayer)(Object) this).getParentModel().renderToBuffer(poseStack, consumer, f, g, h, j, k,l);
+	// }
+
+
+
+	// TODO: figure out how the fuck this was working????
+	// @Override
+	@Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/animal/horse/Horse;FFFFFF)V", at = @At("RETURN"))
+	// public void render(@NotNull PoseStack p_117032_, @NotNull MultiBufferSource p_117033_, int p_117034_, @NotNull Horse p_117035_, float p_117036_, float p_117037_, float p_117038_, float p_117039_, float p_117040_, float p_117041_) {
+	private void inject(PoseStack poseStack, MultiBufferSource multiBufferSource, int i, Horse horse, float f, float g, float h, float j, float k, float l, CallbackInfo ci) {
+
+		PoseStack p_117032_ = poseStack;
+		MultiBufferSource p_117033_ = multiBufferSource;
+		int p_117034_ = i;
+		Horse p_117035_ = horse;
+		float p_117036_ = f;
+		float p_117037_ = g;
+		float p_117038_ = h;
+		float p_117039_ = j;
+		float p_117040_ = k;
+		float p_117041_ = l;
+
+		float $$16 = 1.0F;
+		float $$17 = 1.0F;
+		float $$18 = 1.0F;
+
 		ItemStack $$10 = p_117035_.getArmor();
-		if ($$10.getItem() instanceof HorseArmorItem) {
-			HorseArmorItem $$11 = (HorseArmorItem)$$10.getItem();
-			(((FabricHALMixin)(Object) this).getParentModel()).copyPropertiesTo(( (FabricHALMixin)(Object) this).model);
+		if ($$10.getItem() instanceof HorseArmorItem $$11) {
+			// (this.getParentModel()).copyPropertiesTo(this.model); // TODO see if this is necessary
 			this.model.prepareMobModel(p_117035_, p_117036_, p_117037_, p_117038_);
 			this.model.setupAnim(p_117035_, p_117036_, p_117037_, p_117039_, p_117040_, p_117041_);
-			float $$16 = 1.0F;
-			float $$17 = 1.0F;
-			float $$18 = 1.0F;
+
+//			float $$16 = 1.0F;
+//			float $$17 = 1.0F;
+//			float $$18 = 1.0F;
 			
 			if ($$11 instanceof DyeableHorseArmorItem) {
 				int $$12 = ((DyeableHorseArmorItem)$$11).getColor($$10);
 				$$16 = (float)($$12 >> 16 & 255) / 255.0F;
 				$$17 = (float)($$12 >> 8 & 255) / 255.0F;
 				$$18 = (float)($$12 & 255) / 255.0F;
-			} else {
-				$$16 = 1.0F;
-				$$17 = 1.0F;
-				$$18 = 1.0F;
 			}
 			
 			VertexConsumer $$19 = p_117033_.getBuffer(RenderType.entityCutoutNoCull($$11.getTexture()));
-			this.model.renderToBuffer(p_117032_, $$19, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
+			((FabricHALMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
 			
 			
 			if ($$10.getTag() != null && $$10.getTag().contains("Trim")) {
@@ -556,8 +586,8 @@ public class FabricHALMixin extends RenderLayer<Horse, HorseModel<Horse>> {
 					
 					
 					
-					// this.model.renderToBuffer(p_117032_, $$20, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
-					this.model.renderToBuffer(p_117032_, p_117033_.getBuffer(RenderType.entityCutoutNoCull(AnimalArmorTrimsFabric.TEST)), p_117034_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+					this.model.renderToBuffer(p_117032_, $$20, p_117034_, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0F);
+					// this.model.renderToBuffer(p_117032_, p_117033_.getBuffer(RenderType.entityCutoutNoCull(AnimalArmorTrimsFabric.TEST)), p_117034_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 				}
 			}
 			

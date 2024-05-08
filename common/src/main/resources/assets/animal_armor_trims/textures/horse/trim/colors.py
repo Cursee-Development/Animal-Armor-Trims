@@ -1,6 +1,11 @@
 from PIL import Image
 import os
 
+# 0 - 9
+
+index = 9
+minerals = ["amethyst", "copper", "diamond", "emerald", "gold", "iron", "lapis", "netherite", "quartz", "redstone"]
+
 def replace_colors(image_path, palette_path):
     # Load the image
     img = Image.open(image_path).convert("RGBA")
@@ -28,13 +33,13 @@ def replace_colors(image_path, palette_path):
     new_img.putdata(new_pixels)
 
     # Save the new image
-    new_img.save(image_path.replace("models_old", "models_new").replace(".png", "_redstone.png"))
+    new_img.save(image_path.replace("models_old", "models_new").replace(".png", "_" + minerals[index] + ".png"))
 
 # Path to the folder containing PNG images
 folder_path = "models_old"
 
 # Path to the palette image
-palette_path = "color_palettes/redstone.png"
+palette_path = "color_palettes/" + minerals[index] + ".png"
 
 # Iterate over every PNG image in the folder
 for filename in os.listdir(folder_path):
@@ -43,3 +48,4 @@ for filename in os.listdir(folder_path):
         replace_colors(image_path, palette_path)
 
 print("Color replacement complete!")
+print(minerals[index])
