@@ -1,7 +1,7 @@
 plugins {
     id 'idea'
-    id 'net.minecraftforge.gradle'
-    id 'org.spongepowered.mixin'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
 }
 base {
     archivesName = "${mod_id}-forge-${minecraft_version}"
@@ -78,9 +78,8 @@ dependencies {
     compileOnly project(":common")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
-    implementation fg.deobf("curse.maven:monolib-968432:5277029")
-
-    implementation fg.deobf("curse.maven:instant-horse-tame-1008698:5289327")
+    // https://www.curseforge.com/minecraft/mc-mods/monolib/files/5277033
+    implementation fg.deobf("curse.maven:monolib-968432:5277033")
 }
 
 tasks.withType(JavaCompile).configureEach {

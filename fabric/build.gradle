@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'idea'
-    id 'fabric-loom'
+    id 'fabric-loom' version '1.5-SNAPSHOT'
 }
 base {
     archivesName = "${mod_id}-fabric-${minecraft_version}"
@@ -14,9 +14,8 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":common")
 
-    modImplementation "curse.maven:monolib-968432:5277018"
-
-    modImplementation "curse.maven:instant-horse-tame-1008698:5289327"
+    // https://www.curseforge.com/minecraft/mc-mods/monolib/files/5277022
+    modImplementation "curse.maven:monolib-968432:5277022"
 }
 
 loom {
