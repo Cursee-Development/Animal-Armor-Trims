@@ -78,8 +78,7 @@ dependencies {
     compileOnly project(":common")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
-    // https://www.curseforge.com/minecraft/mc-mods/monolib/files/5277033
-    implementation fg.deobf("curse.maven:monolib-968432:5277033")
+    implementation fg.deobf("curse.maven:monolib-968432:5277034")
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -91,3 +90,9 @@ processResources {
 }
 
 jar.finalizedBy('reobfJar')
+
+sourceSets.each {
+    def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = dir
+    it.java.destinationDirectory = dir
+}
