@@ -1,9 +1,9 @@
 {
     "schemaVersion": 1,
     "id": "animal_armor_trims",
-    "version": "${version}",
-    "name": "${mod_name}",
-    "description": "${description}",
+    "version": "1.0.0",
+    "name": "Animal Armor Trims",
+    "description": "Allows the application of armor trims to horse armor!",
     "authors": [
         "${mod_author}"
     ],
@@ -11,8 +11,8 @@
         "homepage": "https://fabricmc.net/",
         "sources": "https://github.com/FabricMC/fabric-example-mod"
     },
-    "license": "${license}",
-    "icon": "assets/modid/${mod_id}.png",
+    "license": "All Rights Reserved",
+    "icon": "assets/modid/animal_armor_trims.png",
     "environment": "*",
     "entrypoints": {
         "main": [
@@ -23,15 +23,15 @@
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json",
-        "${mod_id}.fabric.mixins.json"
+        "animal_armor_trims.mixins.json",
+        "animal_armor_trims.fabric.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.14",
+        "fabricloader": ">=0.15",
         "fabric": "*",
-        "minecraft": "1.20.1",
-        "java": ">=17",
-        "monolib": ">=1.1.0"
+        "minecraft": "1.20.6",
+        "java": ">=21",
+        "monolib": ">=1.2.0"
     },
     "suggests": {
         "another-mod": "*"

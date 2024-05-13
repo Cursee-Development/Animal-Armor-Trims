@@ -19,6 +19,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.item.DyeableHorseArmorItem;
 import net.minecraft.world.item.HorseArmorItem;
+
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.armortrim.ArmorTrim;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +37,9 @@ import java.util.Optional;
 
 @Mixin(HorseArmorLayer.class)
 public class FabricHALMixin { //} extends RenderLayer<Horse, HorseModel<Horse>> {
-	
+
+
+
 	// @Shadow
 	// @Final
 	// private HorseModel<Horse> model;

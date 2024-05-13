@@ -1,29 +1,50 @@
 plugins {
+    id 'fabric-loom' version '1.6-SNAPSHOT'
     id 'java'
     id 'idea'
-    id 'fabric-loom' version '1.5-SNAPSHOT'
 }
+
 base {
     archivesName = "${mod_id}-fabric-${minecraft_version}"
 }
-dependencies {
-    minecraft "com.mojang:minecraft:${minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-    compileOnly project(":common")
 
-    modImplementation "curse.maven:monolib-968432:5277023"
+repositories {
+    maven { url "https://maven.terraformersmc.com/releases/" }
+}
+
+dependencies {
+
+    compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
+
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+
+    mappings loom.officialMojangMappings()
+
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+
+    implementation project(":common")
+
+    // MonoLib dependency
+    modImplementation "curse.maven:monolib-968432:5314433"
+
+    // https://www.curseforge.com/minecraft/mc-mods/modmenu
+    // optional dependency to show mods in Fabric similar to Forge/NeoForge
+    modApi("com.terraformersmc:modmenu:10.0.0-beta.1") { exclude(module: "fabric-api") }
 }
 
 loom {
     if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
         accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
     }
+
     mixin {
-        defaultRefmapName.set("${mod_id}.refmap.json")
+        defaultRefmapName.set("${mod_id}_fabric.refmap.json")
     }
+
     runs {
         client {
             client()
@@ -40,7 +61,7 @@ loom {
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
+tasks.named('compileJava', JavaCompile).configure {
     source(project(":common").sourceSets.main.allSource)
 }
 

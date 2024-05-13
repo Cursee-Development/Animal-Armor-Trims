@@ -1,8 +1,7 @@
 plugins {
-    // Required for NeoGradle
     id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.7"
 
-    id "io.github.pacifistmc.forgix" version "1.2.6"
+    id "io.github.pacifistmc.forgix" version "1.2.9"
 }
 
 forgix {
@@ -20,18 +19,43 @@ forgix {
         jarLocation = "build/libs/${mod_id}-fabric-${minecraft_version}-${version}.jar"
     }
 
-    forge {
-        projectName = "forge"
-        jarLocation = "build/libs/${mod_id}-forge-${minecraft_version}-${version}.jar"
+    neoforge {
+        projectName = "neoforge"
+        jarLocation = "build/libs/${mod_id}-neoforge-${minecraft_version}-${version}.jar"
 
-        mixin "${mod_id}.forge.mixins.json"
+        mixin "${mod_id}.neoforge.mixins.json"
     }
+
 }
+
+//forgix {
+//    group = "${project.group}" // same as targetting ${group}, just not sure if expandProps occurs before this
+//    mergedJarName = "${mod_id}-merged-${minecraft_version}-${version}.jar"
+//    outputDir = "build/libs"
+//
+//    custom {
+//        projectName = "common"
+//        jarLocation = "build/libs/${mod_id}-common-${minecraft_version}-${version}.jar"
+//    }
+//
+//    fabric {
+//        projectName = "fabric"
+//        jarLocation = "build/libs/${mod_id}-fabric-${minecraft_version}-${version}.jar"
+//    }
+//
+//    neoforge {
+//        projectName = "neoforge"
+//        jarLocation = "build/libs/${mod_id}-neoforge-${minecraft_version}-${version}.jar"
+//
+//        mixin "${mod_id}.neoforge.mixins.json"
+//    }
+//
+//}
 
 subprojects {
     apply plugin: 'java'
 
-    java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+    java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
     jar {
         manifest {
@@ -58,47 +82,32 @@ subprojects {
         }
         maven {
             url "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
         }
     }
 
     tasks.withType(JavaCompile).configureEach {
 
         it.options.encoding = 'UTF-8'
-        it.options.getRelease().set(17)
+        it.options.getRelease().set(21)
     }
 
-    processResources {
-        def expandProps = [
-                "version": version,
-                "group": project.group, //Else we target the task's group.
-                "minecraft_version": minecraft_version,
-                "forge_version": forge_version,
-                "forge_loader_version_range": forge_loader_version_range,
-                "forge_version_range": forge_version_range,
-                "minecraft_version_range": minecraft_version_range,
-                "fabric_version": fabric_version,
-                "fabric_loader_version": fabric_loader_version,
-                "mod_name": mod_name,
-                "mod_author": mod_author,
-                "mod_id": mod_id,
-                "license": license,
-                "description": project.description,
-                "neoforge_version": neoforge_version,
-                "neoforge_loader_version_range": neoforge_loader_version_range,
-                "credits": credits
-        ]
-
-        filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {
-            expand expandProps
-        }
-        inputs.properties(expandProps)
-    }
-
-    // Disables Gradle's custom module metadata from being published to maven. The
-    // metadata includes mapped dependencies which are not reasonably consumable by
-    // other mod developers.
     tasks.withType(GenerateModuleMetadata).configureEach {
 
         enabled = false
+    }
+
+    tasks.withType(Jar).all {
+
+        duplicatesStrategy 'include'
+    }
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
     }
 }

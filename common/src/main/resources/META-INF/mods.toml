@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="*"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Cursee-Development"
+logoFile="icon.png"
+
+[[mods]]
+modId="animal_armor_trims"
+version="1.0.0"
+displayName="Animal Armor Trims"
+displayURL="https://github.com/Cursee-Development"
+authors="Lupin, Jason13, TrulySinclair"
+description='''Allows the application of armor trims to horse armor!'''
+credits='''Credit to Jared (Bookshelf) and Serilum (Collective).'''
+
+[[dependencies.animal_armor_trims]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.6]"
+ordering="NONE"
+side="BOTH"
+
+# MonoLib dependency
+[[dependencies.animal_armor_trims]]
+modId="monolib"
+mandatory=true
+versionRange="[1.2.0,)"
+ordering="NONE"
+side="BOTH"
