@@ -1,24 +1,33 @@
 package com.cursee.animal_armor_trims.platform;
 
 import com.cursee.animal_armor_trims.platform.services.IPlatformHelper;
+import com.cursee.monolib.util.GlobalFabricObjects;
+import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class FabricPlatformHelper implements IPlatformHelper {
-
     @Override
-    public String getPlatformName() {
+    public String getModLoaderName() {
         return "Fabric";
     }
 
     @Override
-    public boolean isModLoaded(String modId) {
+    public String getGameDirectory() {
+        return GlobalFabricObjects.fabricLoader.getGameDir().toString();
+    }
 
-        return FabricLoader.getInstance().isModLoaded(modId);
+    @Override
+    public boolean isModLoaded(String modId) {
+        return GlobalFabricObjects.fabricLoader.isModLoaded(modId);
     }
 
     @Override
     public boolean isDevelopmentEnvironment() {
+        return GlobalFabricObjects.fabricLoader.isDevelopmentEnvironment();
+    }
 
-        return FabricLoader.getInstance().isDevelopmentEnvironment();
+    @Override
+    public boolean isClientSide() {
+        return GlobalFabricObjects.fabricLoader.getEnvironmentType() == EnvType.CLIENT;
     }
 }
