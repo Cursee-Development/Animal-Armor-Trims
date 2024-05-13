@@ -9,11 +9,23 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.HorseArmorLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.animal.horse.Horse;
-import net.minecraft.world.item.DyeableHorseArmorItem;
-import net.minecraft.world.item.HorseArmorItem;
+
+//import net.minecraft.world.item.DyeableHorseArmorItem;
+//import net.minecraft.world.item.HorseArmorItem;
+
+import net.minecraft.world.item.AnimalArmorItem;
+
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.armortrim.ArmorTrim;
+import net.minecraft.world.item.armortrim.TrimMaterial;
+import net.minecraft.world.item.armortrim.TrimPattern;
+import net.minecraft.world.item.component.DyedItemColor;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -125,8 +137,9 @@ public class FabricHALSecondMixin { //} extends RenderLayer<Horse, HorseModel<Ho
 		float $$17 = 1.0F;
 		float $$18 = 1.0F;
 
-		ItemStack $$10 = p_117035_.getArmor();
-		if ($$10.getItem() instanceof HorseArmorItem $$11) {
+//		ItemStack $$10 = p_117035_.getArmor();
+		ItemStack $$10 = horse.getBodyArmorItem();
+		if ($$10.getItem() instanceof AnimalArmorItem $$11) {
 			// (this.getParentModel()).copyPropertiesTo(this.model); // TODO see if this is necessary
 			this.model.prepareMobModel(p_117035_, p_117036_, p_117037_, p_117038_);
 			this.model.setupAnim(p_117035_, p_117036_, p_117037_, p_117039_, p_117040_, p_117041_);
@@ -135,8 +148,8 @@ public class FabricHALSecondMixin { //} extends RenderLayer<Horse, HorseModel<Ho
 //			float $$17 = 1.0F;
 //			float $$18 = 1.0F;
 			
-			if ($$11 instanceof DyeableHorseArmorItem) {
-				int $$12 = ((DyeableHorseArmorItem)$$11).getColor($$10);
+			if ($$11 instanceof AnimalArmorItem && $$11.getMaterial() == ArmorMaterials.LEATHER && $$10.is(ItemTags.DYEABLE)) {
+				int $$12 = DyedItemColor.getOrDefault($$10, -6265536);
 				$$16 = (float)($$12 >> 16 & 255) / 255.0F;
 				$$17 = (float)($$12 >> 8 & 255) / 255.0F;
 				$$18 = (float)($$12 & 255) / 255.0F;
@@ -146,15 +159,26 @@ public class FabricHALSecondMixin { //} extends RenderLayer<Horse, HorseModel<Ho
 			((FabricHALSecondMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
 			
 			
-			if ($$10.getTag() != null && $$10.getTag().contains("Trim")) {
+//			if ($$10.getTag() != null && $$10.getTag().contains("Trim")) {
+			if ($$10.getComponents().has(DataComponents.TRIM)) {
+
+//				CompoundTag compoundTag = $$10.getTagElement("Trim");
+
+				DataComponentMap components = $$10.getComponents();
+
+				ArmorTrim trim = components.get(DataComponents.TRIM);
+
 				
-				CompoundTag compoundTag = $$10.getTagElement("Trim");
-				
-				if (compoundTag != null) {
+				if (trim != null) {
+
+
+					TrimMaterial trimMaterial = trim.material().value();
+					TrimPattern trimPattern = trim.pattern().value();
 					
-					String material = compoundTag.getString("material");
-					
-					String pattern = compoundTag.getString("pattern");
+//					String material = compoundTag.getString("material");
+//					String pattern = compoundTag.getString("pattern");
+					String material = trimMaterial.toString().toLowerCase();
+					String pattern = trimPattern.toString().toLowerCase();
 					
 					VertexConsumer $$20;
 					
