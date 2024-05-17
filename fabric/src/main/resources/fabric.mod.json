@@ -5,14 +5,14 @@
     "name": "Animal Armor Trims",
     "description": "Allows the application of armor trims to horse armor!",
     "authors": [
-        "${mod_author}"
+        "Lupin, Jason13"
     ],
     "contact": {
         "homepage": "https://fabricmc.net/",
         "sources": "https://github.com/FabricMC/fabric-example-mod"
     },
     "license": "All Rights Reserved",
-    "icon": "assets/modid/animal_armor_trims.png",
+    "icon": "assets/animal_armor_trims/icon.png",
     "environment": "*",
     "entrypoints": {
         "main": [

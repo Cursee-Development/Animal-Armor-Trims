@@ -1,14 +1,13 @@
+/* LOGGED MAY 5, 2024 */
+// From Jason:
+//   I'm completely aware that launching Forge in the development environment is broken.
+//   Testing should be done by building, and launching into a production environment (CurseForge / Modrinth / etc.)
 plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '6.0.24'
     id 'org.spongepowered.mixin' version "0.7-SNAPSHOT" // mixin
 }
-
-/* LOGGED MAY 5, 2024 */
-// From Jason:
-//   I'm completely aware that launching Forge in the development environment is broken.
-//   Testing should be done by building, and launching into a production environment (CurseForge / Modrinth / etc.)
 
 base {
     archivesName = "${mod_id}-forge-${minecraft_version}"
@@ -84,7 +83,6 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-
     compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
 
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
@@ -93,7 +91,7 @@ dependencies {
 
     compileOnly project(":common")
 
-    // MonoLib dependency (no fg.deobf())
+    // MonoLib
     implementation "curse.maven:monolib-968432:5314438"
 }
 

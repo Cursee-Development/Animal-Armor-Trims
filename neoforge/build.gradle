@@ -2,12 +2,17 @@ plugins {
     id 'java-library'
     id 'eclipse'
     id 'idea'
-    id 'net.neoforged.gradle.userdev' version '7.0.124'
+    id 'net.neoforged.gradle.userdev' version '7.0.104'
+//    id 'net.neoforged.gradle.mixin' version '7.+'  // mixin
 }
 
 base {
     archivesName = "${mod_id}-neoforge-${minecraft_version}"
 }
+
+//mixin { // mixin
+//    config 'collective_neoforge.mixins.json' // mixin
+//} // mixin
 
 if (file('src/main/resources/META-INF/accesstransformer.cfg').exists()) {
     minecraft.accessTransformers.file file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -43,12 +48,10 @@ runs {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-
     implementation "net.neoforged:neoforge:${neo_version}"
-
     compileOnly project(":common")
 
-    // MonoLib dependency
+    // MonoLib
     implementation "curse.maven:monolib-968432:5314439"
 }
 
