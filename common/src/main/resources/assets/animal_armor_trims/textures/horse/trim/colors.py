@@ -38,14 +38,16 @@ def replace_colors(image_path, palette_path):
 # Path to the folder containing PNG images
 folder_path = "wolf_templates"
 
-# Path to the palette image
-palette_path = "color_palettes/" + minerals[index] + ".png"
+for mineral in minerals:
+    # Path to the palette image
+    palette_path = "color_palettes/" + mineral + ".png"
 
-# Iterate over every PNG image in the folder
-for filename in os.listdir(folder_path):
-    if filename.endswith(".png"):
-        image_path = os.path.join(folder_path, filename)
-        replace_colors(image_path, palette_path)
+    # Iterate over every PNG image in the folder
+    for filename in os.listdir(folder_path):
+        if filename.endswith(".png"):
+            image_path = os.path.join(folder_path, filename)
+            replace_colors(image_path, palette_path)
+
+    print(mineral)
 
 print("Color replacement complete!")
-print(minerals[index])

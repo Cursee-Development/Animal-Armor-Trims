@@ -6,10 +6,13 @@ import net.minecraft.resources.ResourceLocation;
 public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
 
     public static final ResourceLocation HORSE_BLANK = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_old/blank.png");
+    public static final ResourceLocation WOLF_BLANK = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_templates/blank.png");
 
+    public static final ResourceLocation HORSE_BOLT_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_amethyst.png");
     public static final ResourceLocation HORSE_COAST_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_amethyst.png");
     public static final ResourceLocation HORSE_DUNE_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_amethyst.png");
     public static final ResourceLocation HORSE_EYE_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_amethyst.png");
+    public static final ResourceLocation HORSE_FLOW_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_amethyst.png");
     public static final ResourceLocation HORSE_HOST_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_amethyst.png");
     public static final ResourceLocation HORSE_RAISER_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_amethyst.png");
     public static final ResourceLocation HORSE_RIB_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_amethyst.png");
@@ -23,10 +26,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_amethyst.png");
     public static final ResourceLocation HORSE_WAYFINDER_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_amethyst.png");
     public static final ResourceLocation HORSE_WILD_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_amethyst.png");
-
+    public static final ResourceLocation HORSE_BOLT_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_copper.png");
     public static final ResourceLocation HORSE_COAST_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_copper.png");
     public static final ResourceLocation HORSE_DUNE_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_copper.png");
     public static final ResourceLocation HORSE_EYE_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_copper.png");
+    public static final ResourceLocation HORSE_FLOW_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_copper.png");
     public static final ResourceLocation HORSE_HOST_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_copper.png");
     public static final ResourceLocation HORSE_RAISER_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_copper.png");
     public static final ResourceLocation HORSE_RIB_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_copper.png");
@@ -40,10 +44,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_copper.png");
     public static final ResourceLocation HORSE_WAYFINDER_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_copper.png");
     public static final ResourceLocation HORSE_WILD_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_copper.png");
-
+    public static final ResourceLocation HORSE_BOLT_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_diamond.png");
     public static final ResourceLocation HORSE_COAST_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_diamond.png");
     public static final ResourceLocation HORSE_DUNE_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_diamond.png");
     public static final ResourceLocation HORSE_EYE_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_diamond.png");
+    public static final ResourceLocation HORSE_FLOW_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_diamond.png");
     public static final ResourceLocation HORSE_HOST_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_diamond.png");
     public static final ResourceLocation HORSE_RAISER_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_diamond.png");
     public static final ResourceLocation HORSE_RIB_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_diamond.png");
@@ -57,10 +62,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_diamond.png");
     public static final ResourceLocation HORSE_WAYFINDER_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_diamond.png");
     public static final ResourceLocation HORSE_WILD_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_diamond.png");
-
+    public static final ResourceLocation HORSE_BOLT_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_emerald.png");
     public static final ResourceLocation HORSE_COAST_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_emerald.png");
     public static final ResourceLocation HORSE_DUNE_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_emerald.png");
     public static final ResourceLocation HORSE_EYE_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_emerald.png");
+    public static final ResourceLocation HORSE_FLOW_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_emerald.png");
     public static final ResourceLocation HORSE_HOST_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_emerald.png");
     public static final ResourceLocation HORSE_RAISER_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_emerald.png");
     public static final ResourceLocation HORSE_RIB_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_emerald.png");
@@ -74,10 +80,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_emerald.png");
     public static final ResourceLocation HORSE_WAYFINDER_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_emerald.png");
     public static final ResourceLocation HORSE_WILD_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_emerald.png");
-
+    public static final ResourceLocation HORSE_BOLT_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_gold.png");
     public static final ResourceLocation HORSE_COAST_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_gold.png");
     public static final ResourceLocation HORSE_DUNE_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_gold.png");
     public static final ResourceLocation HORSE_EYE_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_gold.png");
+    public static final ResourceLocation HORSE_FLOW_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_gold.png");
     public static final ResourceLocation HORSE_HOST_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_gold.png");
     public static final ResourceLocation HORSE_RAISER_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_gold.png");
     public static final ResourceLocation HORSE_RIB_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_gold.png");
@@ -91,10 +98,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_gold.png");
     public static final ResourceLocation HORSE_WAYFINDER_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_gold.png");
     public static final ResourceLocation HORSE_WILD_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_gold.png");
-
+    public static final ResourceLocation HORSE_BOLT_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_iron.png");
     public static final ResourceLocation HORSE_COAST_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_iron.png");
     public static final ResourceLocation HORSE_DUNE_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_iron.png");
     public static final ResourceLocation HORSE_EYE_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_iron.png");
+    public static final ResourceLocation HORSE_FLOW_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_iron.png");
     public static final ResourceLocation HORSE_HOST_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_iron.png");
     public static final ResourceLocation HORSE_RAISER_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_iron.png");
     public static final ResourceLocation HORSE_RIB_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_iron.png");
@@ -108,10 +116,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_iron.png");
     public static final ResourceLocation HORSE_WAYFINDER_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_iron.png");
     public static final ResourceLocation HORSE_WILD_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_iron.png");
-
+    public static final ResourceLocation HORSE_BOLT_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_lapis.png");
     public static final ResourceLocation HORSE_COAST_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_lapis.png");
     public static final ResourceLocation HORSE_DUNE_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_lapis.png");
     public static final ResourceLocation HORSE_EYE_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_lapis.png");
+    public static final ResourceLocation HORSE_FLOW_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_lapis.png");
     public static final ResourceLocation HORSE_HOST_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_lapis.png");
     public static final ResourceLocation HORSE_RAISER_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_lapis.png");
     public static final ResourceLocation HORSE_RIB_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_lapis.png");
@@ -125,10 +134,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_lapis.png");
     public static final ResourceLocation HORSE_WAYFINDER_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_lapis.png");
     public static final ResourceLocation HORSE_WILD_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_lapis.png");
-
+    public static final ResourceLocation HORSE_BOLT_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_netherite.png");
     public static final ResourceLocation HORSE_COAST_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_netherite.png");
     public static final ResourceLocation HORSE_DUNE_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_netherite.png");
     public static final ResourceLocation HORSE_EYE_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_netherite.png");
+    public static final ResourceLocation HORSE_FLOW_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_netherite.png");
     public static final ResourceLocation HORSE_HOST_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_netherite.png");
     public static final ResourceLocation HORSE_RAISER_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_netherite.png");
     public static final ResourceLocation HORSE_RIB_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_netherite.png");
@@ -142,10 +152,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_netherite.png");
     public static final ResourceLocation HORSE_WAYFINDER_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_netherite.png");
     public static final ResourceLocation HORSE_WILD_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_netherite.png");
-
+    public static final ResourceLocation HORSE_BOLT_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_quartz.png");
     public static final ResourceLocation HORSE_COAST_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_quartz.png");
     public static final ResourceLocation HORSE_DUNE_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_quartz.png");
     public static final ResourceLocation HORSE_EYE_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_quartz.png");
+    public static final ResourceLocation HORSE_FLOW_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_quartz.png");
     public static final ResourceLocation HORSE_HOST_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_quartz.png");
     public static final ResourceLocation HORSE_RAISER_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_quartz.png");
     public static final ResourceLocation HORSE_RIB_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_quartz.png");
@@ -159,10 +170,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_quartz.png");
     public static final ResourceLocation HORSE_WAYFINDER_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_quartz.png");
     public static final ResourceLocation HORSE_WILD_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_quartz.png");
-
+    public static final ResourceLocation HORSE_BOLT_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/bolt_redstone.png");
     public static final ResourceLocation HORSE_COAST_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/coast_redstone.png");
     public static final ResourceLocation HORSE_DUNE_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/dune_redstone.png");
     public static final ResourceLocation HORSE_EYE_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/eye_redstone.png");
+    public static final ResourceLocation HORSE_FLOW_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/flow_redstone.png");
     public static final ResourceLocation HORSE_HOST_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/host_redstone.png");
     public static final ResourceLocation HORSE_RAISER_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/raiser_redstone.png");
     public static final ResourceLocation HORSE_RIB_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/rib_redstone.png");
@@ -176,12 +188,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation HORSE_WARD_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/ward_redstone.png");
     public static final ResourceLocation HORSE_WAYFINDER_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wayfinder_redstone.png");
     public static final ResourceLocation HORSE_WILD_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/models_new/wild_redstone.png");
-
-    public static final ResourceLocation WOLF_BLANK = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_templates/blank.png");
-
+    public static final ResourceLocation WOLF_BOLT_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_amethyst.png");
     public static final ResourceLocation WOLF_COAST_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_amethyst.png");
     public static final ResourceLocation WOLF_DUNE_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_amethyst.png");
     public static final ResourceLocation WOLF_EYE_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_amethyst.png");
+    public static final ResourceLocation WOLF_FLOW_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_amethyst.png");
     public static final ResourceLocation WOLF_HOST_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_amethyst.png");
     public static final ResourceLocation WOLF_RAISER_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_amethyst.png");
     public static final ResourceLocation WOLF_RIB_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_amethyst.png");
@@ -195,10 +206,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_amethyst.png");
     public static final ResourceLocation WOLF_WAYFINDER_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_amethyst.png");
     public static final ResourceLocation WOLF_WILD_AMETHYST = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_amethyst.png");
-
+    public static final ResourceLocation WOLF_BOLT_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_copper.png");
     public static final ResourceLocation WOLF_COAST_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_copper.png");
     public static final ResourceLocation WOLF_DUNE_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_copper.png");
     public static final ResourceLocation WOLF_EYE_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_copper.png");
+    public static final ResourceLocation WOLF_FLOW_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_copper.png");
     public static final ResourceLocation WOLF_HOST_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_copper.png");
     public static final ResourceLocation WOLF_RAISER_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_copper.png");
     public static final ResourceLocation WOLF_RIB_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_copper.png");
@@ -212,10 +224,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_copper.png");
     public static final ResourceLocation WOLF_WAYFINDER_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_copper.png");
     public static final ResourceLocation WOLF_WILD_COPPER = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_copper.png");
-
+    public static final ResourceLocation WOLF_BOLT_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_diamond.png");
     public static final ResourceLocation WOLF_COAST_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_diamond.png");
     public static final ResourceLocation WOLF_DUNE_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_diamond.png");
     public static final ResourceLocation WOLF_EYE_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_diamond.png");
+    public static final ResourceLocation WOLF_FLOW_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_diamond.png");
     public static final ResourceLocation WOLF_HOST_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_diamond.png");
     public static final ResourceLocation WOLF_RAISER_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_diamond.png");
     public static final ResourceLocation WOLF_RIB_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_diamond.png");
@@ -229,10 +242,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_diamond.png");
     public static final ResourceLocation WOLF_WAYFINDER_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_diamond.png");
     public static final ResourceLocation WOLF_WILD_DIAMOND = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_diamond.png");
-
+    public static final ResourceLocation WOLF_BOLT_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_emerald.png");
     public static final ResourceLocation WOLF_COAST_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_emerald.png");
     public static final ResourceLocation WOLF_DUNE_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_emerald.png");
     public static final ResourceLocation WOLF_EYE_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_emerald.png");
+    public static final ResourceLocation WOLF_FLOW_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_emerald.png");
     public static final ResourceLocation WOLF_HOST_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_emerald.png");
     public static final ResourceLocation WOLF_RAISER_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_emerald.png");
     public static final ResourceLocation WOLF_RIB_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_emerald.png");
@@ -246,10 +260,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_emerald.png");
     public static final ResourceLocation WOLF_WAYFINDER_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_emerald.png");
     public static final ResourceLocation WOLF_WILD_EMERALD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_emerald.png");
-
+    public static final ResourceLocation WOLF_BOLT_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_gold.png");
     public static final ResourceLocation WOLF_COAST_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_gold.png");
     public static final ResourceLocation WOLF_DUNE_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_gold.png");
     public static final ResourceLocation WOLF_EYE_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_gold.png");
+    public static final ResourceLocation WOLF_FLOW_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_gold.png");
     public static final ResourceLocation WOLF_HOST_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_gold.png");
     public static final ResourceLocation WOLF_RAISER_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_gold.png");
     public static final ResourceLocation WOLF_RIB_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_gold.png");
@@ -263,10 +278,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_gold.png");
     public static final ResourceLocation WOLF_WAYFINDER_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_gold.png");
     public static final ResourceLocation WOLF_WILD_GOLD = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_gold.png");
-
+    public static final ResourceLocation WOLF_BOLT_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_iron.png");
     public static final ResourceLocation WOLF_COAST_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_iron.png");
     public static final ResourceLocation WOLF_DUNE_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_iron.png");
     public static final ResourceLocation WOLF_EYE_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_iron.png");
+    public static final ResourceLocation WOLF_FLOW_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_iron.png");
     public static final ResourceLocation WOLF_HOST_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_iron.png");
     public static final ResourceLocation WOLF_RAISER_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_iron.png");
     public static final ResourceLocation WOLF_RIB_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_iron.png");
@@ -280,10 +296,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_iron.png");
     public static final ResourceLocation WOLF_WAYFINDER_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_iron.png");
     public static final ResourceLocation WOLF_WILD_IRON = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_iron.png");
-
+    public static final ResourceLocation WOLF_BOLT_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_lapis.png");
     public static final ResourceLocation WOLF_COAST_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_lapis.png");
     public static final ResourceLocation WOLF_DUNE_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_lapis.png");
     public static final ResourceLocation WOLF_EYE_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_lapis.png");
+    public static final ResourceLocation WOLF_FLOW_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_lapis.png");
     public static final ResourceLocation WOLF_HOST_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_lapis.png");
     public static final ResourceLocation WOLF_RAISER_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_lapis.png");
     public static final ResourceLocation WOLF_RIB_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_lapis.png");
@@ -297,10 +314,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_lapis.png");
     public static final ResourceLocation WOLF_WAYFINDER_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_lapis.png");
     public static final ResourceLocation WOLF_WILD_LAPIS = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_lapis.png");
-
+    public static final ResourceLocation WOLF_BOLT_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_netherite.png");
     public static final ResourceLocation WOLF_COAST_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_netherite.png");
     public static final ResourceLocation WOLF_DUNE_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_netherite.png");
     public static final ResourceLocation WOLF_EYE_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_netherite.png");
+    public static final ResourceLocation WOLF_FLOW_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_netherite.png");
     public static final ResourceLocation WOLF_HOST_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_netherite.png");
     public static final ResourceLocation WOLF_RAISER_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_netherite.png");
     public static final ResourceLocation WOLF_RIB_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_netherite.png");
@@ -314,10 +332,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_netherite.png");
     public static final ResourceLocation WOLF_WAYFINDER_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_netherite.png");
     public static final ResourceLocation WOLF_WILD_NETHERITE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_netherite.png");
-
+    public static final ResourceLocation WOLF_BOLT_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_quartz.png");
     public static final ResourceLocation WOLF_COAST_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_quartz.png");
     public static final ResourceLocation WOLF_DUNE_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_quartz.png");
     public static final ResourceLocation WOLF_EYE_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_quartz.png");
+    public static final ResourceLocation WOLF_FLOW_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_quartz.png");
     public static final ResourceLocation WOLF_HOST_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_quartz.png");
     public static final ResourceLocation WOLF_RAISER_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_quartz.png");
     public static final ResourceLocation WOLF_RIB_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_quartz.png");
@@ -331,10 +350,11 @@ public class AnimalArmorTrimsFabricClient implements ClientModInitializer {
     public static final ResourceLocation WOLF_WARD_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/ward_quartz.png");
     public static final ResourceLocation WOLF_WAYFINDER_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wayfinder_quartz.png");
     public static final ResourceLocation WOLF_WILD_QUARTZ = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/wild_quartz.png");
-
+    public static final ResourceLocation WOLF_BOLT_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/bolt_redstone.png");
     public static final ResourceLocation WOLF_COAST_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/coast_redstone.png");
     public static final ResourceLocation WOLF_DUNE_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/dune_redstone.png");
     public static final ResourceLocation WOLF_EYE_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/eye_redstone.png");
+    public static final ResourceLocation WOLF_FLOW_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/flow_redstone.png");
     public static final ResourceLocation WOLF_HOST_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/host_redstone.png");
     public static final ResourceLocation WOLF_RAISER_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/raiser_redstone.png");
     public static final ResourceLocation WOLF_RIB_REDSTONE = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "textures/horse/trim/wolf_t_complete/rib_redstone.png");

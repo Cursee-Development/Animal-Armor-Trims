@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.item.AnimalArmorItem;
 import net.minecraft.world.item.ArmorMaterials;
@@ -55,16 +56,29 @@ public class FabricHorseArmorLayerMixin {
             this.model.prepareMobModel(p_117035_, p_117036_, p_117037_, p_117038_);
             this.model.setupAnim(p_117035_, p_117036_, p_117037_, p_117039_, p_117040_, p_117041_);
 
-            if ($$11 instanceof AnimalArmorItem && $$11.getMaterial() == ArmorMaterials.LEATHER && $$10.is(ItemTags.DYEABLE)) {
-                int $$12 = DyedItemColor.getOrDefault($$10, -6265536);
-                $$16 = (float)($$12 >> 16 & 255) / 255.0F;
-                $$17 = (float)($$12 >> 8 & 255) / 255.0F;
-                $$18 = (float)($$12 & 255) / 255.0F;
+//            if ($$11 instanceof AnimalArmorItem && $$11.getMaterial() == ArmorMaterials.LEATHER && $$10.is(ItemTags.DYEABLE)) {
+//                int $$12 = DyedItemColor.getOrDefault($$10, -6265536);
+//                $$16 = (float)($$12 >> 16 & 255) / 255.0F;
+//                $$17 = (float)($$12 >> 8 & 255) / 255.0F;
+//                $$18 = (float)($$12 & 255) / 255.0F;
+//            }
+
+            int m;
+            if ($$10.is(ItemTags.DYEABLE)) {
+                m = FastColor.ARGB32.opaque(DyedItemColor.getOrDefault($$10, -6265536));
+            } else {
+                m = -1;
             }
 
-            VertexConsumer $$19 = p_117033_.getBuffer(RenderType.entityCutoutNoCull($$11.getTexture()));
 //            ((FabricHorseArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
-            ((FabricHorseArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, 1, 1, 1);
+
+//            VertexConsumer $$19 = p_117033_.getBuffer(RenderType.entityCutoutNoCull($$11.getTexture()));
+//            ((FabricHorseArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, 1, 1, 1);
+
+
+            // render the base armor with appropriate color if it is leather / dyeable
+            VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull($$11.getTexture()));
+            this.model.renderToBuffer(poseStack, vertexConsumer, i, OverlayTexture.NO_OVERLAY, m);
 
             if ($$10.getComponents().has(DataComponents.TRIM)) {
 
@@ -493,8 +507,11 @@ public class FabricHorseArmorLayerMixin {
 
 
 //                    this.model.renderToBuffer(p_117032_, $$20, p_117034_, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0F);
-                    this.model.renderToBuffer(p_117032_, $$20, 1, 1, 1);
+//                    this.model.renderToBuffer(p_117032_, $$20, 1, 1, 1);
                     // this.model.renderToBuffer(p_117032_, p_117033_.getBuffer(RenderType.entityCutoutNoCull(AnimalArmorTrimsFabricClient.HORSE_TEST)), p_117034_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+
+                    // render the trim with -1 value represented un-dyed/no hue modifier
+                    this.model.renderToBuffer(p_117032_, $$20, i, OverlayTexture.NO_OVERLAY, -1);
                 }
             }
 
