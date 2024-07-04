@@ -7,6 +7,7 @@ import net.minecraft.client.model.WolfModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.layers.WolfArmorLayer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.tags.ItemTags;
@@ -66,7 +67,7 @@ public class NeoForgeWolfArmorLayerMixin {
 
             VertexConsumer $$19 = p_117033_.getBuffer(RenderType.entityCutoutNoCull($$11.getTexture()));
 //            ((FabricWolfArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
-            ((NeoForgeWolfArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, 1, 1, 1);
+//            ((NeoForgeWolfArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, 1, 1, 1);
 
             if ($$10.getComponents().has(DataComponents.TRIM)) {
 
@@ -469,6 +470,8 @@ public class NeoForgeWolfArmorLayerMixin {
                             $$20 = p_117033_.getBuffer(RenderType.entityCutoutNoCull(AnimalArmorTrimsNeoForge.WOLF_BLANK));
                         }
                     }
+
+                    ((NeoForgeWolfArmorLayerMixin)(Object) this).model.renderToBuffer(poseStack, $$20, i, OverlayTexture.NO_OVERLAY);
                 }
             }
         }

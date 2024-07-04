@@ -70,7 +70,7 @@ public class FabricWolfArmorLayerMixin {
 
             VertexConsumer $$19 = p_117033_.getBuffer(RenderType.entityCutoutNoCull($$11.getTexture()));
 //            ((FabricWolfArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
-            ((FabricWolfArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, 1, 1, 1);
+//            ((FabricWolfArmorLayerMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, 1, 1, 1);
 
             if ($$10.getComponents().has(DataComponents.TRIM)) {
 
@@ -473,7 +473,17 @@ public class FabricWolfArmorLayerMixin {
                             $$20 = p_117033_.getBuffer(RenderType.entityCutoutNoCull(AnimalArmorTrimsFabricClient.WOLF_BLANK));
                         }
                     }
+
+                    ((FabricWolfArmorLayerMixin)(Object) this).model.renderToBuffer(poseStack, $$20, i, OverlayTexture.NO_OVERLAY);
                 }
+
+
+
+
+
+
+
+
             }
         }
     }
