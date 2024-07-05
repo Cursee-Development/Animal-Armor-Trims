@@ -33,21 +33,31 @@ def replace_colors(image_path, palette_path):
     new_img.putdata(new_pixels)
 
     # Save the new image
-    new_img.save(image_path.replace("wolf_templates", "wolf_t_complete").replace(".png", "_" + minerals[index] + ".png"))
+    new_img.save(image_path.replace("models_old", "models_new").replace(".png", "_" + minerals[index] + ".png"))
 
 # Path to the folder containing PNG images
-folder_path = "wolf_templates"
+folder_path = "models_old"
 
-for mineral in minerals:
-    # Path to the palette image
-    palette_path = "color_palettes/" + mineral + ".png"
+palette_path = "color_palettes/" + minerals[index] + ".png"
 
-    # Iterate over every PNG image in the folder
-    for filename in os.listdir(folder_path):
-        if filename.endswith(".png"):
-            image_path = os.path.join(folder_path, filename)
-            replace_colors(image_path, palette_path)
+# Iterate over every PNG image in the folder
+for filename in os.listdir(folder_path):
+    if filename.endswith(".png"):
+        image_path = os.path.join(folder_path, filename)
+        replace_colors(image_path, palette_path)
 
-    print(mineral)
+print(minerals[index])
+
+# for mineral in minerals:
+#     # Path to the palette image
+#     palette_path = "color_palettes/" + mineral + ".png"
+#
+#     # Iterate over every PNG image in the folder
+#     for filename in os.listdir(folder_path):
+#         if filename.endswith(".png"):
+#             image_path = os.path.join(folder_path, filename)
+#             replace_colors(image_path, palette_path)
+#
+#     print(mineral)
 
 print("Color replacement complete!")
