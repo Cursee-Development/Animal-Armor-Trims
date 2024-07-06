@@ -1,6 +1,7 @@
 package com.cursee.animal_armor_trims.mixin;
 
 import com.cursee.animal_armor_trims.AnimalArmorTrimsFabric;
+import com.cursee.animal_armor_trims.platform.Services;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HorseModel;
@@ -22,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(HorseArmorLayer.class)
+@Mixin(value = HorseArmorLayer.class, priority = 900)
 public class FabricHALSecondMixin { //} extends RenderLayer<Horse, HorseModel<Horse>> {
 	
 	// @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/animal/horse/Horse;FFFFFF)V", at = @At("TAIL"))
@@ -106,9 +107,13 @@ public class FabricHALSecondMixin { //} extends RenderLayer<Horse, HorseModel<Ho
 
 	// TODO: figure out how the fuck this was working????
 	// @Override
-	@Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/animal/horse/Horse;FFFFFF)V", at = @At("RETURN"))
+	@Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/animal/horse/Horse;FFFFFF)V", at = @At("RETURN"), cancellable = true)
 	// public void render(@NotNull PoseStack p_117032_, @NotNull MultiBufferSource p_117033_, int p_117034_, @NotNull Horse p_117035_, float p_117036_, float p_117037_, float p_117038_, float p_117039_, float p_117040_, float p_117041_) {
 	private void inject(PoseStack poseStack, MultiBufferSource multiBufferSource, int i, Horse horse, float f, float g, float h, float j, float k, float l, CallbackInfo ci) {
+
+//		if (Services.PLATFORM.isModLoaded("horsebuff")) {
+//			ci.cancel();
+//		}
 
 		PoseStack p_117032_ = poseStack;
 		MultiBufferSource p_117033_ = multiBufferSource;
@@ -141,9 +146,11 @@ public class FabricHALSecondMixin { //} extends RenderLayer<Horse, HorseModel<Ho
 				$$17 = (float)($$12 >> 8 & 255) / 255.0F;
 				$$18 = (float)($$12 & 255) / 255.0F;
 			}
-			
-			VertexConsumer $$19 = p_117033_.getBuffer(RenderType.entityCutoutNoCull($$11.getTexture()));
-			((FabricHALSecondMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
+
+			// todo: remember that this renders the armor itself as the first layer. it's already being rendered, dumbass
+			// can we assume this renders anyway?
+//			VertexConsumer $$19 = p_117033_.getBuffer(RenderType.entityCutoutNoCull($$11.getTexture()));
+//			((FabricHALSecondMixin)(Object) this).model.renderToBuffer(p_117032_, $$19, p_117034_, OverlayTexture.NO_OVERLAY, $$16, $$17, $$18, 1.0F);
 			
 			
 			if ($$10.getTag() != null && $$10.getTag().contains("Trim")) {

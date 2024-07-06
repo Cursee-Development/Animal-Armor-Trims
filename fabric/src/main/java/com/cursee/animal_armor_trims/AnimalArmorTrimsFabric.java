@@ -185,5 +185,6 @@ public class AnimalArmorTrimsFabric implements ClientModInitializer {
     public static final ResourceLocation WILD_REDSTONE = new ResourceLocation(Constants.MOD_ID, "textures/horse/trim/models_new/wild_redstone.png");
     
     @Override
-    public void onInitializeClient() {}
+    public void onInitializeClient() {
+    }
 }

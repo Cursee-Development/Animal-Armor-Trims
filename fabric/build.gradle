@@ -14,8 +14,13 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":common")
 
-    modImplementation "curse.maven:monolib-968432:5277018"
+    // Mod Menu
+    modImplementation "curse.maven:modmenu-308702:5162837"
 
+    // MonoLib
+    modImplementation "curse.maven:monolib-968432:5443112"
+
+    // Instant Horse Tame
     modImplementation "curse.maven:instant-horse-tame-1008698:5289327"
 }
 
