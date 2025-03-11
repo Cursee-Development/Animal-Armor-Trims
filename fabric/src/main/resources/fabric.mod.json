@@ -16,10 +16,10 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.cursee.examplemod.ExampleModFabric"
+            "com.cursee.animal_armor_trims.AnimalArmorTrimsFabric"
         ],
         "client": [
-            "com.cursee.examplemod.ExampleModClientFabric"
+            "com.cursee.animal_armor_trims.AnimalArmorTrimsClientFabric"
         ]
     },
     "mixins": [
