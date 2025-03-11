@@ -6,12 +6,9 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.armortrim.ArmorTrim;
 
 public class HorseRenderLayerHelper {
     public static VertexConsumer createVertexConsumer(CompoundTag trim, MultiBufferSource buffer) {
-
-
 
         String material = trim.getString("material").replace("minecraft:", "");
         String pattern = trim.getString("pattern").replace("minecraft:", "");

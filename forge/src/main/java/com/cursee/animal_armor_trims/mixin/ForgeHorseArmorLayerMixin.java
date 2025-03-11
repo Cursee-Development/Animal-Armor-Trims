@@ -9,7 +9,8 @@ import net.minecraft.client.renderer.entity.layers.HorseArmorLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.animal.horse.Horse;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.HorseArmorItem;
+import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(HorseArmorLayer.class)
-public class FabricHorseArmorLayerMixin {
+public class ForgeHorseArmorLayerMixin {
 
     @Shadow @Final private HorseModel<Horse> model;
 
