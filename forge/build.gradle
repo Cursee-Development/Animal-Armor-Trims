@@ -83,6 +83,9 @@ dependencies {
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
     implementation fg.deobf("curse.maven:monolib-968432:6123976")
+
+    // ImmediatelyFast
+    implementation fg.deobf("curse.maven:immediatelyfast-686911:6264746")
 }
 
 tasks.withType(JavaCompile).configureEach {
