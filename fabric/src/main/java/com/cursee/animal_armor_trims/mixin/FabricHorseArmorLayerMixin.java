@@ -25,8 +25,6 @@ public class FabricHorseArmorLayerMixin {
     @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/animal/horse/Horse;FFFFFF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/HorseModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V"))
     private void animalArmorTrims$onRenderHorseArmorLayer(PoseStack poseStack, MultiBufferSource buffer, int packedLight, Horse horse, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
 
-        poseStack.pushPose();
-
         ItemStack armor = horse.getArmor();
         if (!(armor.getItem() instanceof HorseArmorItem)) return;
 
@@ -39,6 +37,5 @@ public class FabricHorseArmorLayerMixin {
         VertexConsumer vertexConsumer = HorseRenderLayerHelper.createVertexConsumer(trim, buffer);
 
         this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
-        poseStack.popPose();
     }
 }
