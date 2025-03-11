@@ -15,6 +15,9 @@ dependencies {
     modImplementation "curse.maven:modmenu-308702:5810603"
 
     modImplementation "curse.maven:monolib-968432:6123972"
+
+    // ImmediatelyFast
+    modImplementation "curse.maven:immediatelyfast-686911:6285506"
 }
 
 loom {
